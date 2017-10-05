@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Contact Information</title>
+</head>
+<body>
+
+<form th:action="@{'/add-contact-info/'+ ${id}}" method="post">
+    <input type="text" name="label" placeholder="Label" />
+    <input type="text" name="value" placeholder="Value" />
+    <select name="infoType">
+        <option th:each="infotype : ${infotypes}" th:text="${infotype}" th:value="${infotype}"></option>
+    </select>
+    <input type="submit" />
+</form>
+</body>
+</html>
